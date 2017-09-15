@@ -9,9 +9,8 @@ module.exports = function (grunt) {
             dev: {
                 options: {
                     plugins: [
-                        new (require('less-plugin-autoprefix'))({browsers: ["last 10 versions"]})
+                        new (require('less-plugin-autoprefix'))({browsers: ["last 5 versions"]})
                     ],
-                    compress: true,
                     cleancss: true,
                     sourceMap: true,
                     sourceMapFilename: 'app/frontend/css/style.css.map',
@@ -21,6 +20,15 @@ module.exports = function (grunt) {
                 files: {
                     'app/frontend/css/style.css': 'app/frontend/less/style.less'
                 }
+            }
+        },
+        concat: {
+            options: {
+                separator: ';'
+            },
+            dist: {
+                src: ['node_modules/jquery/dist/jquery.js', 'node_modules/owl-carousel-2/owl.carousel.js', 'node_modules/isotope-layout/dist/isotope.pkgd.js'],
+                dest: 'app/frontend/js/libs.js'
             }
         },
         browserSync: {
@@ -34,7 +42,7 @@ module.exports = function (grunt) {
                 },
                 options: {
                     watchTask: true,
-                    server: './app'
+                    server: './app/frontend/'
                 }
             }
         }
@@ -42,6 +50,7 @@ module.exports = function (grunt) {
 
     // load npm tasks
     grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-browser-sync');
 
