@@ -7,41 +7,141 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="menu">
+<div class="menu">
 
-  </div><!-- end menu -->
+</div><!-- end menu -->
 
-  <div class="main-wrapper">
-    <header>
+<div class="main-wrapper">
+  <header>
+    <a href="#" class="logo"><img src="images/outdoor-logo.svg" alt="outdoor"></a>
+  </header>
 
-    </header>
+  <section class="main-slider">
+    <div class="slider owl-carousel">
+      <img src="images/slide-0.jpg" alt="1">
+      <img src="images/slide-1.jpg" alt="2">
+      <img src="images/slide-2.jpg" alt="3">
+      <img src="images/slide-3.jpg" alt="4">
+    </div><!-- end slider -->
 
-    <section class="main-slider">
+    <div class="slider-logo">
+      <h1>Outdoor</h1>
+      <ul class="socials">
+        <li><a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        <li><a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        <li><a href="#" class="google-plus"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+        <li><a href="#" class="pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+        <li><a href="#" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+      </ul>
+    </div><!-- end slider -->
 
-    </section><!-- end main-slider -->
+    <div class="slider-text">
+      <p>We provide new Design Waves<br>
+        for our customers</p>
+    </div>
 
-    <section class="about">
-      <div class="container"></div>
-    </section><!-- end about -->
+    <a href="#about" class="scroll-down"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+  </section><!-- end main-slider -->
 
-    <section class="team">
+  <section id="about" class="about">
+    <div class="container">
+      <h2>About us</h2>
+      <p></p>
+      <div class="about-slider">
 
-    </section><!-- end team -->
+      </div><!-- end about-slider -->
+    </div>
+  </section><!-- end about -->
 
-    <section class="portfolio">
+  <section class="team">
+    <div class="container">
+      <h2>Our team</h2>
+      <div class="team-slider">
 
-    </section><!-- end portfolio -->
+      </div><!-- end team-slider -->
+      <h3>Our skills</h3>
+      <div class="row">
+        <div class="col-6">
+          <div class="skill">
 
-    <section class="contacts">
+          </div><!-- end skill -->
+        </div><!-- end col -->
+        <div class="col-6">
+          <div class="skill">
 
-    </section><!-- end contacts -->
+          </div><!-- end skill -->
+        </div><!-- end col -->
+        <div class="col-6">
+          <div class="skill">
 
-    <footer>
+          </div><!-- end skill -->
+        </div><!-- end col -->
+        <div class="col-6">
+          <div class="skill">
 
-    </footer>
-  </div><!-- end main-wrapper -->
+          </div><!-- end skill -->
+        </div><!-- end col -->
+        <div class="col-6">
+          <div class="skill">
 
-  <script src="js/libs.js"></script>
+          </div><!-- end skill -->
+        </div><!-- end col -->
+        <div class="col-6">
+          <div class="skill">
+
+          </div><!-- end skill -->
+        </div><!-- end col -->
+      </div><!-- end row -->
+    </div><!-- end container -->
+  </section><!-- end team -->
+
+  <section class="portfolio">
+    <div class="container">
+      <h2>Portfolio</h2>
+      <div class="portfolio-btns">
+        <button>All</button>
+        <button>Branding</button>
+        <button>Design</button>
+        <button>Development</button>
+        <button>Photography</button>
+      </div><!-- end portfolio-btns -->
+    </div>
+    <div class="container-fluid portfolio-items">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+  </section><!-- end portfolio -->
+
+  <section class="contacts">
+
+  </section><!-- end contacts -->
+
+  <footer>
+
+  </footer>
+</div><!-- end main-wrapper -->
+
+<script src="js/libs.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.slider').owlCarousel({
+            loop: true,
+            nav: true,
+            items: 1,
+            dots: false
+        })
+    })
+
+</script>
 
 </body>
 </html>

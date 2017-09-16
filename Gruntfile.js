@@ -27,7 +27,7 @@ module.exports = function (grunt) {
                 separator: ';'
             },
             dist: {
-                src: ['node_modules/jquery/dist/jquery.js', 'node_modules/owl-carousel-2/owl.carousel.js', 'node_modules/isotope-layout/dist/isotope.pkgd.js'],
+                src: ['node_modules/jquery/dist/jquery.js', 'node_modules/owl.carousel/dist/owl.carousel.js', 'node_modules/isotope-layout/dist/isotope.pkgd.js'],
                 dest: 'app/frontend/js/libs.js'
             }
         },
