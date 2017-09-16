@@ -4305,6 +4305,38 @@ h1 {
 ul {
   list-style: none;
 }
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+          animation-name: fadeOut;
+}
 @media (min-width: 1024px) {
   .container {
     width: 970px;
@@ -4381,6 +4413,35 @@ header .logo {
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
+}
+.slider .owl-next,
+.slider .owl-prev {
+  color: #fff;
+}
+.slider .owl-next {
+  right: 30px;
+}
+.slider .owl-prev {
+  left: 30px;
+}
+.owl-prev,
+.owl-next {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 30px;
+  opacity: .5;
+  transition: opacity 0.3s ease-in-out;
+}
+.owl-prev:hover,
+.owl-next:hover,
+.owl-prev:focus,
+.owl-next:focus,
+.owl-prev:active,
+.owl-next:active {
+  opacity: 1;
 }
 .slider-logo {
   display: block;
