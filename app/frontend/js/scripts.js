@@ -10,4 +10,49 @@ $(document).ready(function () {
         autoplay: true
 
     });
+
+    $('.about-slider').owlCarousel({
+        loop: true,
+        nav: true,
+        navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+        responsive: {
+            0: {
+                items: 1
+            },
+            768: {
+                items: 3
+            },
+            992: {
+                items: 4
+            }
+        },
+        dots: false
+
+    });
+
+    // Select all links with hashes
+    $('a[href*="#"]')
+    // Remove links that don't actually link to anything
+        .not('[href="#"]')
+        .not('[href="#0"]')
+        .click(function (event) {
+            // On-page links
+            if (
+                location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+                &&
+                location.hostname == this.hostname
+            ) {
+                // Figure out element to scroll to
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                // Does a scroll target exist?
+                if (target.length) {
+                    // Only prevent default if animation is actually gonna happen
+                    event.preventDefault();
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                }
+            }
+        });
 });
