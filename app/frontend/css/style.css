@@ -4368,8 +4368,8 @@ body {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
-  font: 10px/1.5 'Raleway', sans-serif;
-  color: #000000;
+  font: 14px/1.5 'Raleway', sans-serif;
+  color: #222;
   background-color: #fff;
   transition: -webkit-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out;
@@ -4722,9 +4722,9 @@ header .logo {
           transform: translateY(-20px);
 }
 .carousel-item:hover .circle-img img {
-  -webkit-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-          transform: scale(1.1);
+  -webkit-transform: scale(1.1, 1.1);
+      -ms-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
 }
 .carousel-item h4 {
   font-size: 13px;
@@ -4824,5 +4824,116 @@ header .logo {
   height: 100%;
   background-color: #86a200;
   transition: max-width 1s ease-in-out;
+}
+.portfolio {
+  padding-bottom: 100px;
+}
+.portfolio h2 {
+  margin-bottom: 18px;
+}
+.portfolio-btns {
+  margin-bottom: 55px;
+  text-align: center;
+}
+.portfolio-btns button {
+  margin: 0 8px;
+  padding: 0;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  color: #999999;
+  font-weight: 700;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+.portfolio-btns .is-checked {
+  color: #222;
+}
+.portfolio-items-wrapper {
+  width: 100%;
+  padding: 0 25px;
+}
+.item {
+  float: left;
+  width: 20%;
+  margin-bottom: 25px;
+  padding: 0 5px;
+  text-align: center;
+  text-transform: capitalize;
+  box-sizing: border-box;
+}
+.item:hover .wrapper-item-btn,
+.item:active .wrapper-item-btn,
+.item:focus .wrapper-item-btn {
+  -webkit-transform: scale(1, 1);
+      -ms-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+.item:hover .item-name,
+.item:active .item-name,
+.item:focus .item-name,
+.item:hover .item-type,
+.item:active .item-type,
+.item:focus .item-type {
+  -webkit-transform: translateY(-85px);
+      -ms-transform: translateY(-85px);
+          transform: translateY(-85px);
+}
+.item:hover .item-name a,
+.item:active .item-name a,
+.item:focus .item-name a,
+.item:hover .item-type a,
+.item:active .item-type a,
+.item:focus .item-type a {
+  color: #fff;
+}
+.item a {
+  text-decoration: none;
+}
+.item-img {
+  position: relative;
+  margin-bottom: 17px;
+}
+.item-img img {
+  display: block;
+  width: 100%;
+}
+.wrapper-item-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  -webkit-transform: scale(0, 0);
+      -ms-transform: scale(0, 0);
+          transform: scale(0, 0);
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+.item-btn {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url("../images/plus.svg") no-repeat 50% 35%;
+  background-color: rgba(32, 99, 173, 0.7);
+  font-size: 0;
+}
+.item-name a {
+  color: #000;
+  transition: color 0.3s ease-in-out;
+}
+.item-type a {
+  color: #aaa;
+  transition: color 0.3s ease-in-out;
+}
+.item-name,
+.item-type {
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  z-index: 2;
 }
 /*# sourceMappingURL=style.css.map */

@@ -21,8 +21,8 @@ body {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
-  font: 10px/1.5 'Raleway', sans-serif;
-  color: #000000;
+  font: 14px/1.5 'Raleway', sans-serif;
+  color: @black;
   background-color: #fff;
   transition: transform @time;
 }
@@ -391,7 +391,7 @@ header {
   }
 
   &:hover .circle-img img {
-    transform: scale(1.1);
+    transform: scale(1.1, 1.1);
   }
 
   h4 {
@@ -501,4 +501,111 @@ header {
   height: 100%;
   background-color: @green;
   transition: max-width 1s ease-in-out;
+}
+
+.portfolio {
+  padding-bottom: 100px;
+  h2 {
+    margin-bottom: 18px;
+  }
+}
+
+.portfolio-btns {
+  margin-bottom: 55px;
+  text-align: center;
+  button {
+    margin: 0 8px;
+    padding: 0;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    color: @light-grey;
+    font-weight: 700;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    transition: color @time;
+  }
+
+  .is-checked {
+    color: @black;
+  }
+}
+
+.portfolio-items-wrapper {
+  width: 100%;
+  padding: 0 25px;
+}
+
+.item {
+  float: left;
+  width: 20%;
+  margin-bottom: 25px;
+  padding: 0 5px;
+  text-align: center;
+  text-transform: capitalize;
+  box-sizing: border-box;
+  &:hover,
+  &:active,
+  &:focus {
+    .wrapper-item-btn {
+      transform: scale(1, 1);
+    }
+
+    .item-name,
+    .item-type {
+      transform: translateY(-85px);
+      a {
+        color: #fff;
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.item-img {
+  position: relative;
+  margin-bottom: 17px;
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.wrapper-item-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: @gutter;
+  transform: scale(0, 0);
+  transition: transform @time;
+}
+
+.item-btn {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url("../images/plus.svg") no-repeat 50% 35%;
+  background-color: rgba(32, 99, 173, .7);
+  font-size: 0;
+}
+
+.item-name a {
+  color: #000;
+  transition: color @time;
+}
+
+.item-type a {
+  color: #aaa;
+  transition: color @time;
+}
+
+.item-name,
+.item-type {
+  transition: transform @time;
+  z-index: 2;
 }
