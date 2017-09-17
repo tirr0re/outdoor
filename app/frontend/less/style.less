@@ -12,6 +12,7 @@
 
 @import "reset";
 @import "fonts";
+@import "fix-bootstrap-gutter";
 
 
 
@@ -22,10 +23,11 @@ body {
   overflow-x: hidden;
   font: 10px/1.5 'Raleway', sans-serif;
   color: #000000;
+  background-color: #fff;
   transition: transform @time;
 }
 
-h1, h2 {
+h1, h2, h3 {
   text-transform: uppercase;
 }
 
@@ -41,12 +43,21 @@ h2 {
   text-align: center;
 }
 
+h3 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
 ul {
   list-style: none;
 }
 
 .green {
   color: @green;
+}
+
+.red {
+  color: @red;
 }
 
 @keyframes fadeIn {
@@ -75,12 +86,6 @@ ul {
 
 .fadeOut {
   animation-name: fadeOut;
-}
-
-@media (min-width: 1024px) {
-  .container {
-    width: 970px;
-  }
 }
 
 .main-wrapper {
@@ -307,12 +312,8 @@ header {
   padding-top: 85px;
 }
 
-.team {
-  padding-top: 100px;
-}
-
 .about {
-  padding-bottom: 110px;
+  padding-bottom: 115px;
   h2 {
     margin-bottom: 10px;
   }
@@ -326,6 +327,35 @@ header {
   }
 }
 
+.team {
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 90px;
+  text-align: center;
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../images/bg-our-team.jpg") no-repeat 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    opacity: .1;
+    z-index: -1;
+  }
+
+  h2 {
+    margin-bottom: 8px;
+  }
+
+  h3 {
+    margin-bottom: 27px;
+  }
+}
+
 .about-slider,
 .team-slider {
   .owl-next,
@@ -334,34 +364,64 @@ header {
   }
 
   .owl-prev {
-    left: -30px;
+    left: -40px;
   }
 
   .owl-next {
-    right: -30px;
+    right: -40px;
   }
 }
 
-.about-item-wrapper {
-  padding: 20px 30px 0;
+.team-slider {
+  margin-bottom: 70px;
+  .owl-next,
+  .owl-prev {
+    top: 76px;
+  }
 }
 
-.about-item {
+.carousel-item-wrapper {
+  padding: 20px @gutter 0;
+}
+
+.carousel-item {
   text-align: center;
   &:hover .icon {
     transform: translateY(-20px);
   }
 
-  h3 {
+  &:hover .circle-img img {
+    transform: scale(1.1);
+  }
+
+  h4 {
     font-size: 13px;
-    margin-bottom: 4px;
+    margin-bottom: 5px;
     text-transform: uppercase;
   }
 
   p {
-    margin-bottom: 10px;
+    max-height: 40px;
+    height: 100%;
+    margin-bottom: 15px;
     font-size: 12px;
+    line-height: 20px;
     color: @grey;
+    overflow-x: hidden;
+  }
+
+  .name {
+    color: #000;
+    text-decoration: none;
+    transition: color @time;
+    &:hover {
+      color: @light-grey;
+    }
+  }
+
+  .socials a {
+    width: 22px;
+    line-height: 22px;
   }
 }
 
@@ -390,4 +450,55 @@ header {
 .icon-punctual {
   width: 44px;
   background-position: 0 -201px;
+}
+
+.circle-img {
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+  margin-bottom: 8px;
+  border-radius: 50%;
+  background-color: @background-img;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  img {
+    display: block;
+    width: 100%;
+    transition: transform @time;
+  }
+}
+
+.skill {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  margin-bottom: @gutter;
+  background-color: #ddd;
+  border-radius: 3px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.skill-name {
+  position: relative;
+  float: left;
+  padding-left: @gutter;
+  color: #e0e7bc;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.skill-status {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 0;
+  width: 100%;
+  height: 100%;
+  background-color: @green;
+  transition: max-width 1s ease-in-out;
 }

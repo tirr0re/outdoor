@@ -30,6 +30,25 @@ $(document).ready(function () {
 
     });
 
+    $('.team-slider').owlCarousel({
+        loop: true,
+        nav: true,
+        navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+        responsive: {
+            0: {
+                items: 1
+            },
+            768: {
+                items: 3
+            },
+            992: {
+                items: 4
+            }
+        },
+        dots: false
+
+    });
+
     // Select all links with hashes
     $('a[href*="#"]')
     // Remove links that don't actually link to anything
@@ -55,4 +74,18 @@ $(document).ready(function () {
                 }
             }
         });
+
+
+
+
+    $(window).scroll(function(){
+        var $skills = $('.skills').offset().top - $(window).height()*70/100;
+
+        if ($(this).scrollTop() >= $skills) {
+            $('.skill-status').css('max-width', function(){
+                var newWidth = $(this).data('status') + '%';
+                return newWidth;
+            });
+        }
+    });
 });
