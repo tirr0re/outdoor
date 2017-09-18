@@ -60,6 +60,10 @@ ul {
   color: @red;
 }
 
+.grey {
+  color: @grey;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -124,6 +128,7 @@ header {
     height: 100%;
   }
 }
+
 
 .fixed {
   position: fixed;
@@ -700,7 +705,16 @@ header {
   input,
   textarea {
     border: 1px solid #e5e5e5;
+    transition: box-shadow @time, border-color @time;
+    &:focus {
+      box-shadow: 0 0 3px green;
+      border-color: #789100;
+    }
 
+    &::placeholder {
+      color: @grey;
+      font-family: 'Raleway', sans-serif;
+    }
   }
 }
 
@@ -712,5 +726,48 @@ header {
   padding-right: 5px;
   h4 {
     margin-bottom: 2px;
+  }
+}
+
+footer {
+  padding-top: 97px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.footer-content {
+  width: 33.33%;
+  margin: 0 auto;
+  p {
+    margin-bottom: 8px;
+    letter-spacing: .5px;
+  }
+
+  .socials {
+    margin: 38px 0 77px 0;
+  }
+
+  .copy {
+    font-size: 10px;
+  }
+}
+
+.to-top {
+  display: inline-block;
+  width: 42px;
+  margin-bottom: 40px;
+  line-height: 40px;
+  color: @red;
+  font-size: 30px;
+  border: 1px solid lighten(@red, 20%);
+  border-radius: 50%;
+  transition: border-color @time, color @time, background-color @time;
+  box-sizing: border-box;
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: @red;
+    background-color: @red;
+    color: #fff;
   }
 }
