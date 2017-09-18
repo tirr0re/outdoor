@@ -4358,7 +4358,12 @@ a img {
   padding-right: 10px !important;
   padding-left: 10px !important;
 }
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
+  .container {
+    width: 684px;
+  }
+}
+@media (min-width: 992px) {
   .container {
     width: 960px;
   }
@@ -4969,7 +4974,7 @@ header .logo {
   font-size: 12px;
   line-height: 20px;
   color: #777777;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 .carousel-item .name {
   color: #000;
@@ -5314,5 +5319,76 @@ footer {
   border-color: #cd3333;
   background-color: #cd3333;
   color: #fff;
+}
+@media (max-width: 992px) {
+  h1 {
+    font-size: 109px;
+  }
+  h2 {
+    font-size: 70px;
+  }
+  .slider-logo {
+    width: 540px;
+  }
+  .slider-logo .socials:before,
+  .slider-logo .socials:after {
+    width: 34.7%;
+  }
+  .about {
+    padding-bottom: 65px;
+  }
+  .about h2,
+  .about p {
+    margin-bottom: 30px;
+  }
+  .about-slider .owl-prev,
+  .team-slider .owl-prev {
+    left: -30px;
+  }
+  .about-slider .owl-next,
+  .team-slider .owl-next {
+    right: -30px;
+  }
+  .team {
+    padding-top: 76px;
+  }
+  .team h2 {
+    margin-bottom: 23px;
+  }
+  .team-slider {
+    margin-bottom: 60px;
+  }
+  .portfolio {
+    padding-top: 74px;
+    padding-bottom: 77px;
+  }
+  .portfolio h2 {
+    margin-bottom: 37px;
+  }
+  .portfolio-items-wrapper {
+    width: 620px;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .item {
+    width: 50%;
+  }
+  .contacts {
+    height: 620px;
+  }
+  .contacts-info {
+    width: 418px;
+    left: 10px;
+    padding: 5px 20px 20px;
+  }
+  .contacts-info h2 {
+    font-size: 46px;
+  }
+  .footer {
+    padding-top: 68px;
+  }
+  .footer-content .socials {
+    margin: 38px 0 57px 0;
+  }
 }
 /*# sourceMappingURL=style.css.map */
