@@ -24,7 +24,6 @@ body {
   font: 14px/1.5 'Raleway', sans-serif;
   color: @black;
   background-color: #fff;
-  transition: transform @time;
 }
 
 h1, h2, h3 {
@@ -50,6 +49,24 @@ h3 {
 
 ul {
   list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main-wrapper,
+.menu,
+header {
+  transition: transform @time;
+}
+
+.menu-open {
+  .main-wrapper,
+  .menu,
+  header {
+    transform: translateX(-300px);
+  }
 }
 
 .green {
@@ -103,7 +120,154 @@ ul {
   position: fixed;
   top: 0;
   right: -300px;
-  background-color: red;
+  background-color: @red;
+}
+
+.menu-socials {
+  margin-left: 45px;
+  font-size: 0;
+  li {
+    display: inline-block;
+    margin-right: 3px;
+    &:hover a:before,
+    &:focus a:before,
+    &:active a:before {
+      transform: scale(1, 1);
+    }
+  }
+
+  a {
+    position: relative;
+    display: block;
+    width: 30px;
+    font-size: 16px;
+    line-height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    text-align: center;
+    &:before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 28px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -14px;
+      margin-top: -14px;
+      transform: scale(0, 0);
+      transition: transform @time;
+      border: 1px solid;
+      border-radius: 50%;
+    }
+  }
+
+  .facebook {
+    color: #3c5fb2;
+    &:before {
+      border-color: #3c5fb2;
+    }
+  }
+
+  .twitter {
+    color: #3799dd;
+    &:before {
+      border-color: #3799dd;
+    }
+  }
+
+  .google-plus {
+    color: #dc4c39;
+    &:before {
+      border-color: #dc4c39;
+    }
+  }
+
+  .pinterest {
+    color: #cc2127;
+    &:before {
+      border-color: #cc2127;
+    }
+  }
+
+  .instagram {
+    color: #96624e;
+    &:before {
+      border-color: #96624e;
+    }
+  }
+}
+
+.close-menu {
+  position: absolute;
+  top: 13px;
+  right: 17px;
+  font-size: 16px;
+  color: #f4d8c7;
+  opacity: .4;
+  transition: opacity @time;
+  &:hover,
+  &:active,
+  &:focus {
+    opacity: 1;
+  }
+}
+
+nav {
+  margin: 30px 0 50px;
+  a {
+    display: inline-block;
+    width: 100%;
+    padding-left: 45px;
+    line-height: 40px;
+    font-weight: 700;
+    color: #f4d8c7;
+    transition: background-color @time;
+    letter-spacing: .5px;
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: #bd2f2f;
+    }
+  }
+}
+
+.dropdown,
+.dropdown-sub {
+  > a {
+    background:url("../images/menu-plus.png") no-repeat 26px 15px;
+  }
+  > ul {
+    max-height: 0;
+    height: 100%;
+    padding-left: 15px;
+    overflow-x: hidden;
+    a {
+      line-height: 34px;
+      font-weight: 400;
+    }
+  }
+}
+
+.dropdown.open,
+.dropdown-sub.open {
+  > ul {
+    max-height: 500px;
+  }
+
+  > a {
+    background:url("../images/menu-minus.png") no-repeat 26px 15px;
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: #bd2f2f;
+    }
+  }
+}
+
+.dropdown-sub > a,
+.dropdown-sub.open > a {
+  background-position: 26px 11px;
 }
 
 header {
@@ -111,10 +275,8 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  display: flex;
-  align-items: center;
   height: 61px;
-  padding: 10px 30px;
+  padding: 30px;
   z-index: 2;
   .logo {
     display: none;
@@ -122,21 +284,96 @@ header {
 }
 
 .logo {
+  float: left;
   height: 22px;
+  margin-top: 10px;
   img {
     display: block;
     height: 100%;
   }
 }
 
+.header-btns {
+  float: right;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.menu-btn {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 38px;
+  background-color: #fff;
+  color: @red;
+  font-size: 20px;
+  border: 1px solid @red;
+  border-radius: 3px;
+  text-align: center;
+  .fa {
+    transition: all @time;
+  }
+}
+
+.lang-wrapper {
+  position: relative;
+  margin-right: 10px;
+  ul {
+    position: absolute;
+    left: 0;
+    top: 36px;
+    width:100%;
+    background-color: #fff;
+    border: 1px solid #d1dede;
+    border-radius: 3px;
+    border-top: none;
+    transform: rotateX(-90deg);
+    transform-origin: 100% 0;
+    transition: transform @time;
+    a {
+      display: block;
+      text-transform: uppercase;
+      color: @blue;
+      transition: color @time;
+      text-align: center;
+      &:hover,
+      &:active,
+      &:focus {
+        color: @black;
+      }
+    }
+  }
+}
+
+.open-lang {
+  ul {
+    transform: rotateX(0);
+  }
+}
+
+.lang {
+  display: inline-block;
+  width: 55px;
+  height: 40px;
+  padding-left: 7px;
+  font-weight: 700;
+  line-height: 38px;
+  border: 1px solid #d1dede;
+  border-radius: 3px;
+  color: blue;
+  background: #fff url("../images/lang-arrows.png") no-repeat 33px 11px;
+  text-transform:uppercase;
+}
 
 .fixed {
   position: fixed;
   top:0;
   left: 0;
   width: 100%;
+  padding: @gutter 30px;
   background-color: rgba(255, 255, 255, .8);
-  border-bottom: 1px solid @light-grey;
+  border-bottom: 1px solid #e5e5e5;
+  z-index: 10;
   .logo {
     display: block;
   }
@@ -416,7 +653,6 @@ header {
 
   .name {
     color: #000;
-    text-decoration: none;
     transition: color @time;
     &:hover {
       color: @light-grey;
@@ -563,10 +799,6 @@ header {
       }
     }
   }
-
-  a {
-    text-decoration: none;
-  }
 }
 
 .item-img {
@@ -616,11 +848,12 @@ header {
 .map {
   position: relative;
   width: 100%;
-  height: 660px;
+  height: 100%;
 }
 
 .contacts {
   position: relative;
+  height: 660px;
   .container {
     position: absolute;
     top: 20px;

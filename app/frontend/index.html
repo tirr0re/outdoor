@@ -8,17 +8,57 @@
 </head>
 <body>
 <div class="menu">
+  <a href="#" class="close-menu"><i class="fa fa-times" aria-hidden="true"></i></a>
 
+  <nav>
+    <ul>
+      <li><a href="#main-slider">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li class="dropdown">
+        <a href="#">Services</a>
+        <ul>
+          <li class="dropdown-sub">
+            <a href="#">First Sub</a>
+            <ul>
+              <li><a href="#">First sub sub</a></li>
+              <li><a href="#">Second sub sub</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Second Sub</a></li>
+          <li><a href="#">Third Sub</a></li>
+        </ul>
+      </li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#portfolio">Works</a></li>
+      <li><a href="#contacts">Contacts</a></li>
+    </ul>
+  </nav>
+
+  <ul class="menu-socials">
+    <li><a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+    <li><a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+    <li><a href="#" class="google-plus"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+    <li><a href="#" class="pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+    <li><a href="#" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+  </ul>
 </div><!-- end menu -->
 
+<header>
+  <a href="#" class="logo"><img src="images/outdoor-logo.svg" alt="outdoor"></a>
+  <div class="header-btns">
+    <div class="lang-wrapper">
+      <a href="#" class="lang">en</a>
+      <ul>
+        <li><a href="#">ua</a></li>
+        <li><a href="#">fr</a></li>
+      </ul>
+    </div><!-- end lang -->
+
+    <a href="#" class="menu-btn"><i class="fa fa-bars" aria-hidden="true"></i></a>
+  </div><!-- end header-btns -->
+</header>
+
 <div class="main-wrapper">
-  <header>
-    <a href="#" class="logo"><img src="images/outdoor-logo.svg" alt="outdoor"></a>
-    <div class="header-btns">
-
-    </div><!-- end header-btns -->
-  </header>
-
   <section id="main-slider" class="main-slider">
     <div class="slider owl-carousel">
       <img src="images/slide-0.jpg" alt="1">
@@ -393,7 +433,7 @@
 
   <footer>
     <div class="footer-content">
-      <a href="#main-slider" class="to-top"><i class="fa fa-angle-up"></i></a>
+      <a href="#main-slider" class="to-top"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
       <p><strong>Thanks for your visit!</strong></p>
       <p class="grey">Share us with social media:</p>
       <ul class="socials">

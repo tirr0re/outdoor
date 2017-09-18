@@ -76,8 +76,9 @@ $(document).ready(function () {
             }
         });
 
-    // animate skill bar
+    // animate skill bar and show header
     $(window).scroll(function(){
+
         var $skills = $('.skills').offset().top - $(window).height()*70/100;
 
         if ($(this).scrollTop() >= $skills) {
@@ -85,6 +86,10 @@ $(document).ready(function () {
                 var newWidth = $(this).data('status') + '%';
                 return newWidth;
             });
+        } else if ($(this).scrollTop() >= $(window).height()) {
+            $('header').addClass('fixed') // show header
+        } else if ($(this).scrollTop() <= $(window).height()) {
+            $('header').removeClass('fixed') // hide header
         }
     });
 
@@ -165,4 +170,37 @@ $(document).ready(function () {
             title: 'OUTDOOR'
         });
     }
+
+    $('.menu-btn').on('click', function(event){
+        event.preventDefault();
+        $('body').toggleClass('menu-open');
+
+        if ($(this).children('.fa').hasClass('fa-bars')) {
+            $(this).children('.fa').removeClass('fa-bars').addClass('fa-times')
+        }   else  {
+            $(this).children('.fa').removeClass('fa-times').addClass('fa-bars')
+        }
+    });
+
+    $('.lang').on('click', function(event){
+        event.preventDefault();
+        $(this).parent().toggleClass('open-lang');
+    });
+
+    $('.dropdown').on('click', function(event){
+        event.preventDefault();
+        $(this).toggleClass('open')
+    });
+
+    $('.dropdown-sub').on('click', function(event){
+        event.preventDefault();
+        event.stopPropagation();
+        $(this).toggleClass('open')
+    });
+
+    $('.close-menu').on('click', function(event) {
+        event.preventDefault();
+        $('body').toggleClass('menu-open');
+        $('.menu-btn').children('.fa').removeClass('fa-times').addClass('fa-bars');
+    });
 });
