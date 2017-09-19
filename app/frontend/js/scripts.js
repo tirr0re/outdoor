@@ -160,7 +160,7 @@ $(document).ready(function () {
         var map = new google.maps.Map(mapElement, mapOptions);
         //map.setCenter(new newLatLng(lat, lng));
         // Let's also add a marker while we're at it
-        var image = new google.maps.MarkerImage('../images/marker.png',
+        var image = new google.maps.MarkerImage('./images/marker.png',
             new google.maps.Size(127,127),    /* size */
             new google.maps.Point(0,0),    /* origin */
             new google.maps.Point(40,70),    /* anchor */

@@ -5,7 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>OUTDOOR</title>
-  <link rel="stylesheet" href="css/style.css">
+  <!--(if target dev)><!--><link rel="stylesheet" href="css/style.css"><!--<!(endif)-->
+  <!--(if target dist)><link rel="stylesheet" href="css/style.min.css"><!(endif)-->
 </head>
 <body>
 <div class="menu">
@@ -448,11 +449,10 @@
     </div><!-- end footer-content -->
   </footer>
 </div><!-- end main-wrapper -->
-
-<script src="js/libs.js"></script>
+<!--(if target dev)><!--><script src="js/libs.js"></script><!--<!(endif)-->
 <script type="text/javascript"
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrRzbN7kCKF3S51Sqk6NCjB8F-xMb83ik"></script>
-<script src="js/scripts.js"></script>
-
+<!--(if target dist)><script src="js/main.min.js"></script><!(endif)-->
+<!--(if target dev)><!--><script src="js/scripts.js"></script><!--<!(endif)-->
 </body>
 </html>

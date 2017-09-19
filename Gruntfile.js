@@ -3,7 +3,7 @@ module.exports = function (grunt) {
     grunt.initConfig({
         watch: {
             files: 'app/frontend/less/**/*.less',
-            tasks: ['less']
+            tasks: ['less:dev']
         },
         less: {
             dev: {
@@ -20,6 +20,18 @@ module.exports = function (grunt) {
                 files: {
                     'app/frontend/css/style.css': 'app/frontend/less/style.less'
                 }
+            },
+            prod: {
+                options: {
+                    plugins: [
+                        new (require('less-plugin-autoprefix'))({browsers: ["last 5 versions"]})
+                    ],
+                    compress: true,
+                    cleancss: true
+                },
+                files: {
+                    'public/css/style.min.css': 'app/frontend/less/style.less'
+                }
             }
         },
         concat: {
@@ -31,10 +43,41 @@ module.exports = function (grunt) {
                 dest: 'app/frontend/js/libs.js'
             }
         },
+        uglify: {
+            my_target: {
+                files: {
+                    'public/js/main.min.js': ['app/frontend/js/libs.js', 'app/frontend/js/scripts.js']
+                }
+            }
+        },
+        copy: {
+            main: {
+                files: [{
+                    expand: true,
+                    src: ['app/frontend/images/**'],
+                    dest: 'public/images/',
+                    filter: 'isFile',
+                    flatten: true
+                }, {
+                    expand: true,
+                    cwd: 'app/frontend/fonts/',
+                    src: '**',
+                    dest: 'public/fonts/',
+                    filter: 'isFile'
+                }]
+            }
+        },
+        targethtml: {
+          dist: {
+              files: {
+                  'public/index.html': 'app/frontend/index.html'
+              }
+          }
+        },
         browserSync: {
             dev: {
                 bsFiles: {
-                    src : [
+                    src: [
                         'app/frontend/css/*.css',
                         'app/frontend/*.html',
                         'app/frontend/js/*.js'
@@ -51,9 +94,13 @@ module.exports = function (grunt) {
     // load npm tasks
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-targethtml');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-browser-sync');
 
     // define default task
     grunt.registerTask('default', ['browserSync', 'watch']);
+    grunt.registerTask('build', ['copy', 'less:prod', 'uglify', 'targethtml']);
 };
