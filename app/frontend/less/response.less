@@ -1,12 +1,13 @@
 @media (max-width: 1024px) {
-  .about-slider .owl-prev,
-  .team-slider .owl-prev {
-    left: -30px;
-  }
+  .about-slider,
+  .team-slider {
+    .owl-prev {
+      left: -30px;
+    }
 
-  .about-slider .owl-next,
-  .team-slider .owl-next {
-    right: -30px;
+    .owl-next {
+      right: -30px;
+    }
   }
 }
 
@@ -20,7 +21,6 @@
   }
 
   .slider-logo {
-    width: 540px;
     .socials:before,
     .socials:after {
       width: 34.7%;
@@ -101,7 +101,6 @@
   }
 
   .slider-logo {
-    width: 240px;
     h1 {
       font-size: 47px;
       margin-left: 0;
@@ -114,12 +113,14 @@
     }
   }
 
-  .slider .owl-prev {
-    left: 10px;
-  }
+  .slider {
+    .owl-prev {
+      left: 10px;
+    }
 
-  .slider .owl-next {
-    right: 10px;
+    .owl-next {
+      right: 10px;
+    }
   }
 
   .slider-text {
@@ -157,16 +158,13 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-  }
+    .owl-prev {
+      left: -60px;
+    }
 
-  .about-slider .owl-prev,
-  .team-slider .owl-prev {
-    left: -60px;
-  }
-
-  .about-slider .owl-next,
-  .team-slider .owl-next {
-    right: -60px;
+    .owl-next {
+      right: -60px;
+    }
   }
 
   .team {

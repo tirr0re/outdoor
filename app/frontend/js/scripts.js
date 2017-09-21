@@ -173,6 +173,7 @@ function init() {
         // How zoomed in you want the map to start at (always required)
         zoom: 16,
         streetViewControl: false,
+        disableDefaultUI: true,
         // The latitude and longitude to center the map (always required)
         center: myLatLng, // Lutsk
         // How you would like to style the map.
